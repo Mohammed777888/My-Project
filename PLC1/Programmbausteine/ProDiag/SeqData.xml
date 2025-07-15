@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V19" />
+  <SW.Blocks.GlobalDB ID="0">
+    <AttributeList>
+      <DBAccessibleFromOPCUA>false</DBAccessibleFromOPCUA>
+      <HeaderAuthor>Siemens</HeaderAuthor>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Static">
+    <Member Name="plantOn" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Plant switched on</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Plant switched on</MultiLanguageText>
+      </Comment>
+      <StartValue>true</StartValue>
+    </Member>
+    <Member Name="compressedAir" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Druckluft nicht in Ordnung. Im Fehlerfall ist die Ursache: Der zur Maschine gehörende Not-Halt hat die Maschine gestoppt. Bei ausgeschalteter Maschine oder gedrücktem Not-Halt können keine Funktionen ausgeführt werden.</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Compressed air not OK.  In case of an Error Cause: The emergency stop belonging to the machine has stopped the machine. No functions can be performed when the machine is shut off or the emergency stop is pressed. </MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="powerVoltage" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Spannungsversorgung nicht in Ordnung. Im Fehlerfall ist die Druckluft nicht in Ordnung. Im Fehlerfall ist die Ursache: Der zur Maschine gehörende Not-Halt hat die Maschine gestoppt. Bei ausgeschalteter Maschine oder gedrücktem Not-Halt können keine Funktionen ausgeführt werden.</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Voltage power supply not OK. </MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="doorClosed" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Safety door closed</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Safety door closed</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="autoStart" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Automatic start</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Automatic start</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="autoStop" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Automatic stop</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Automatic stop</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="autoStarted" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Automatic started</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Automatic started</MultiLanguageText>
+      </Comment>
+      <StartValue>false</StartValue>
+    </Member>
+    <Member Name="autoStopped" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Automatic stopped</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Automatic stopped</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ackSeq" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Acknowledge GRAPH FB</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Acknowledge GRAPH FB</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errFltSeq" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Error Graph FB</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Error Graph FB</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="seqStart" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">GRAPH sequence started</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">GRAPH sequence started</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="newCase" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Sensor new case</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Sensor new case</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="posCaseBelt" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Case position on belt</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Case position on belt</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="posLift1" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Lift 1 position</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Lift 1 position</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="posLift2" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Lift 2 position</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Lift 2 position</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="visCaseLift1" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Case lift1 visible</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Case lift1 visible</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="visCaseLift2" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Case lift2 visible</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Case lift2 visible</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="setStop1" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Set stopper1</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Set stopper1</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="setStop2" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Set stopper2</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Set stopper2</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="sensorStop1" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Sensor at stopper1</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Sensor at stopper1</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="sensorStop2" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Sensor at stopper2</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Sensor at stopper2</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="sensorStop3" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Sensor at stopper3</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Sensor at stopper3</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errSensorStop1" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Error on Sensor at stopper1</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Error on Sensor at stopper1</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errSensorStop2" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Error on Sensor at stopper2</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Error on Sensor at stopper2</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errSensorStop3" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Error on Sensor at stopper2</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Error on Sensor at stopper2</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errSensorNewCase" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Error on Sensor at new case</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Error on Sensor at new case</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="toLift1" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Case to lift1 or lift2</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Case to lift1 or lift2</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="autoLift1" Datatype="&quot;typeStartLift&quot;">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Start automatic lift1</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Start automatic lift1</MultiLanguageText>
+      </Comment>
+      <AssignedProDiagFB>LiftProDiagFB</AssignedProDiagFB>
+    </Member>
+    <Member Name="autoLift2" Datatype="&quot;typeStartLift&quot;">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Start automatic lift2</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Start automatic lift2</MultiLanguageText>
+      </Comment>
+      <AssignedProDiagFB>LiftProDiagFB</AssignedProDiagFB>
+    </Member>
+    <Member Name="manLift1" Datatype="&quot;typeStartLift&quot;">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Start manual lift1</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Start manual lift1</MultiLanguageText>
+      </Comment>
+      <AssignedProDiagFB>LiftProDiagFB</AssignedProDiagFB>
+    </Member>
+    <Member Name="manLift2" Datatype="&quot;typeStartLift&quot;">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Start manual lift2</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Start manual lift2</MultiLanguageText>
+      </Comment>
+      <AssignedProDiagFB>LiftProDiagFB</AssignedProDiagFB>
+    </Member>
+    <Member Name="outLift1Up" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Output lift1 up</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Output lift1 up</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="outLift1Down" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Output lift1 down</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Output lift1 down</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="outLift2Up" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Output lift2 up</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Output lift2 up</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="outLift2Down" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Output lift2 down</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Output lift2 down</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="sensorLift1Up" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Sensor lift1 up</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Sensor lift1 up</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="sensorLift1Down" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Sensor lift1 down</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Sensor lift1 down</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="sensorLift2Up" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Sensor lift2 up</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Sensor lift2 up</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="sensorLift2Down" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Sensor lift2 down</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Sensor lift2 down</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="simOperandSupVis" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Simulation supervision operand</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Simulation supervision operand</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="simInterlockSupVis" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Simulation supervision interlock</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Simulation supervision interlock</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="simLiftFreeSupVis" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Simulation supervision lift free</MultiLanguageText>
+        <MultiLanguageText Lang="de-DE">Simulation supervision lift free</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="simActReactSupVis" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Simulation supervision action and reaction</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Simulation supervision action and reaction</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="simPositionSupVis" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Simulation supervision position</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Simulation supervision position</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="simUdtOperandSupVis" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Simulation supervision operand in UDT</MultiLanguageText>
+        <MultiLanguageText Lang="de-DE">Simulation supervision operand in UDT</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="simActive" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Simulation active</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Simulation active</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="releaseSimPlantOn" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Release simulation plant on</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Release simulation plant on</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="releaseSimAutoStarted" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Release simulation auto started</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Release simulation auto started</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="releaseSimAutoStopped" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Release simulation auto stopped</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Release simulation auto stopped</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="beltLEDs" Datatype="Word">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Moving lights belt</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Moving lights belt</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="lift1LEDs" Datatype="Word">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Moving lights lift1</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Moving lights lift1</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="lift2LEDs" Datatype="Word">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Moving lights lift2</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Moving lights lift2</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="stateCase" Datatype="Array[0..3] of Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">State case position</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">State case position</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="liftFree" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Lift is free for new case</MultiLanguageText>
+        <MultiLanguageText Lang="de-DE">Lift ist bereit für einen neuen Kasten</MultiLanguageText>
+      </Comment>
+      <StartValue>true</StartValue>
+    </Member>
+    <Member Name="simInterlockSupVisLiftFree" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Simulation supervision interlock</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Simulation supervision interlock lift free</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="resetCrit" Datatype="Bool" />
+    <Member Name="identTimeStamp" Datatype="LDT" />
+    <Member Name="retVal" Datatype="Int" />
+    <Member Name="frequency" Datatype="Real">
+      <StartValue>10.0</StartValue>
+    </Member>
+    <Member Name="freqError" Datatype="Bool" />
+    <Member Name="freqStatus" Datatype="Word" />
+    <Member Name="textListID" Datatype="Word">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>100</MemoryReserve>
+      <Name>SeqData</Name>
+      <Namespace />
+      <Number>11</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>Global DB for BeltLift</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>SeqData</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.GlobalDB>
+</Document>

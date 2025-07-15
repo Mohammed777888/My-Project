@@ -1,31 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Document>
   <Engineering version="V19" />
-  <SW.Blocks.FB ID="0">
+  <SW.Blocks.OB ID="0">
     <AttributeList>
+      <HeaderAuthor>Siemens</HeaderAuthor>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
   <Section Name="Input">
-    <Member Name="V1" Datatype="Bool" />
-  </Section>
-  <Section Name="Output" />
-  <Section Name="InOut" />
-  <Section Name="Static">
-    <Member Name="Program_Alarm_1" Datatype="Program_Alarm" Version="1.0">
-      <AttributeList>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
-      </AttributeList>
+    <Member Name="Initial_Call" Datatype="Bool" Informative="true">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Initial call of this OB</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Remanence" Datatype="Bool" Informative="true">
+      <Comment>
+        <MultiLanguageText Lang="en-US">=True, if remanent data are available</MultiLanguageText>
+      </Comment>
     </Member>
   </Section>
   <Section Name="Temp" />
   <Section Name="Constant" />
 </Sections></Interface>
+      <IsIECCheckEnabled>true</IsIECCheckEnabled>
       <MemoryLayout>Optimized</MemoryLayout>
-      <MemoryReserve>100</MemoryReserve>
-      <Name>Block_1</Name>
+      <Name>MainBeltLift</Name>
       <Namespace />
-      <Number>2</Number>
+      <Number>125</Number>
       <ProgrammingLanguage>FBD</ProgrammingLanguage>
-      <SetENOAutomatically>false</SetENOAutomatically>
+      <SecondaryType>ProgramCycle</SecondaryType>
+      <SetENOAutomatically>true</SetENOAutomatically>
     </AttributeList>
     <ObjectList>
       <MultilingualText ID="1" CompositionName="Comment">
@@ -33,7 +35,7 @@
           <MultilingualTextItem ID="2" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
-              <Text />
+              <Text>Main programm belt lift</Text>
             </AttributeList>
           </MultilingualTextItem>
           <MultilingualTextItem ID="3" CompositionName="Items">
@@ -48,77 +50,28 @@
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
   <Parts>
-    <Access Scope="GlobalVariable" UId="21">
+    <Access Scope="LocalVariable" UId="21">
       <Symbol>
-        <Component Name="Tag_1" />
+        <Component Name="Initial_Call" />
       </Symbol>
     </Access>
-    <Part Name="Program_Alarm" Version="1.0" UId="22">
-      <Instance Scope="LocalVariable" UId="23">
-        <Component Name="Program_Alarm_1" />
-      </Instance>
-    </Part>
+    <Call UId="22">
+      <CallInfo Name="MainFB" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="23">
+          <Component Name="InstMainFB" />
+        </Instance>
+        <Parameter Name="Initial_Call" Section="Input" Type="Bool" />
+      </CallInfo>
+    </Call>
   </Parts>
   <Wires>
-    <Wire UId="38">
+    <Wire UId="25">
       <OpenCon UId="24" />
       <NameCon UId="22" Name="en" />
     </Wire>
-    <Wire UId="39">
+    <Wire UId="26">
       <IdentCon UId="21" />
-      <NameCon UId="22" Name="SIG" />
-    </Wire>
-    <Wire UId="40">
-      <OpenCon UId="25" />
-      <NameCon UId="22" Name="TIMESTAMP" />
-    </Wire>
-    <Wire UId="41">
-      <OpenCon UId="26" />
-      <NameCon UId="22" Name="SD_1" />
-    </Wire>
-    <Wire UId="42">
-      <OpenCon UId="27" />
-      <NameCon UId="22" Name="SD_2" />
-    </Wire>
-    <Wire UId="43">
-      <OpenCon UId="28" />
-      <NameCon UId="22" Name="SD_3" />
-    </Wire>
-    <Wire UId="44">
-      <OpenCon UId="29" />
-      <NameCon UId="22" Name="SD_4" />
-    </Wire>
-    <Wire UId="45">
-      <OpenCon UId="30" />
-      <NameCon UId="22" Name="SD_5" />
-    </Wire>
-    <Wire UId="46">
-      <OpenCon UId="31" />
-      <NameCon UId="22" Name="SD_6" />
-    </Wire>
-    <Wire UId="47">
-      <OpenCon UId="32" />
-      <NameCon UId="22" Name="SD_7" />
-    </Wire>
-    <Wire UId="48">
-      <OpenCon UId="33" />
-      <NameCon UId="22" Name="SD_8" />
-    </Wire>
-    <Wire UId="49">
-      <OpenCon UId="34" />
-      <NameCon UId="22" Name="SD_9" />
-    </Wire>
-    <Wire UId="50">
-      <OpenCon UId="35" />
-      <NameCon UId="22" Name="SD_10" />
-    </Wire>
-    <Wire UId="51">
-      <NameCon UId="22" Name="Error" />
-      <OpenCon UId="36" />
-    </Wire>
-    <Wire UId="52">
-      <NameCon UId="22" Name="Status" />
-      <OpenCon UId="37" />
+      <NameCon UId="22" Name="Initial_Call" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -204,17 +157,17 @@
           <MultilingualTextItem ID="13" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
-              <Text />
+              <Text>"Main Program Sweep (Cycle)"</Text>
             </AttributeList>
           </MultilingualTextItem>
           <MultilingualTextItem ID="14" CompositionName="Items">
             <AttributeList>
               <Culture>de-DE</Culture>
-              <Text />
+              <Text>"Main Program Sweep (Cycle)"</Text>
             </AttributeList>
           </MultilingualTextItem>
         </ObjectList>
       </MultilingualText>
     </ObjectList>
-  </SW.Blocks.FB>
+  </SW.Blocks.OB>
 </Document>

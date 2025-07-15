@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V19" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="startLiftUp" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Start lift up</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Start lift up</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="startLiftDown" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Start lift down</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Start lift down</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>typeStartLift</Name>
+      <Namespace />
+      <Supervisions><PLCDataTypeSupervisions xmlns="http://www.siemens.com/automation/Openness/SW/PLCDataTypeSupervisions/v1">
+  <PLCDataTypeSupervision Number="1" Type="Operand">
+    <SupervisedOperand Name="#startLiftUp" />
+    <SupervisedStatus>true</SupervisedStatus>
+    <DelayOperand Name="T#0ms" />
+    <Conditions>
+      <Condition>
+        <ConditionOperand Number="1" Name="#startLiftDown" />
+        <TriggeringStatus>true</TriggeringStatus>
+      </Condition>
+      <Condition>
+        <ConditionOperand Number="2" Name="" />
+        <TriggeringStatus>true</TriggeringStatus>
+      </Condition>
+      <Condition>
+        <ConditionOperand Number="3" Name="" />
+        <TriggeringStatus>true</TriggeringStatus>
+      </Condition>
+    </Conditions>
+    <CategoryNumber>1</CategoryNumber>
+    <SubCategory1Number>0</SubCategory1Number>
+    <SubCategory2Number>0</SubCategory2Number>
+    <SpecificField>
+      <SpecificFieldText>
+        <MultiLanguageText Lang="en-US">Lift is started in both directions.</MultiLanguageText>
+        <MultiLanguageText Lang="de-DE">Die Hubeinheit wird in beide Richtungen gestartet.</MultiLanguageText>
+      </SpecificFieldText>
+    </SpecificField>
+  </PLCDataTypeSupervision>
+  <PLCDataTypeSupervision Number="2" Type="Operand">
+    <SupervisedOperand Name="#startLiftDown" />
+    <SupervisedStatus>true</SupervisedStatus>
+    <DelayOperand Name="T#0ms" />
+    <Conditions>
+      <Condition>
+        <ConditionOperand Number="1" Name="#startLiftUp" />
+        <TriggeringStatus>true</TriggeringStatus>
+      </Condition>
+      <Condition>
+        <ConditionOperand Number="2" Name="" />
+        <TriggeringStatus>true</TriggeringStatus>
+      </Condition>
+      <Condition>
+        <ConditionOperand Number="3" Name="" />
+        <TriggeringStatus>true</TriggeringStatus>
+      </Condition>
+    </Conditions>
+    <CategoryNumber>1</CategoryNumber>
+    <SubCategory1Number>0</SubCategory1Number>
+    <SubCategory2Number>0</SubCategory2Number>
+    <SpecificField>
+      <SpecificFieldText>
+        <MultiLanguageText Lang="en-US">Lift is started in both directions.</MultiLanguageText>
+        <MultiLanguageText Lang="de-DE">Die Hubeinheit wird in beide Richtungen gestartet.</MultiLanguageText>
+      </SpecificFieldText>
+    </SpecificField>
+  </PLCDataTypeSupervision>
+</PLCDataTypeSupervisions></Supervisions>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>PLC data type start lift</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>typeStartLift</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>
